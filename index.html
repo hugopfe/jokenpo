@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JokenPô</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/831899fe19.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="container">
+        <h1>JokenPô</h1>
+        <header>
+            <p id="player-score">Your Score: <span>0</span></p>
+            <p id="round">Round <span>0</span></p>
+            <p id="pc-score">PC's Score: <span>0</span></p>
+        </header>
+        <main id="players-wrapper">
+            <div id="user-side">
+                <div class="player-title">
+                    <i class="fa-solid fa-user"></i>
+                    <p>Player</p>
+                </div>
+                <div class="play awaiting"></div>
+            </div>
+            <div id="match-result">
+                Choose your play
+            </div>
+            <div id="pc-side">
+                <div class="player-title">
+                    <i class="fa-solid fa-robot"></i>
+                    <p>PC</p>
+                </div>
+                <div class="play awaiting"></div>
+            </div>
+        </main>
+        <footer>
+            <button onclick="play(0)">Rock</button>
+            <button onclick="play(1)">Paper</button>
+            <button onclick="play(2)">Scissors</button>
+        </footer>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>
