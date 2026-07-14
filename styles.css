@@ -105,7 +105,7 @@ main {
 }
 
 #pc-side .player-title {
-  justify-content: end;  
+  justify-content: end;
 }
 
 .player-title > p {
@@ -123,12 +123,16 @@ main {
   height: 50px;
   transform: rotate(0deg);
   border-radius: 50%;
-  animation: rotate 1s ease-in-out infinite ;
+  animation: rotate 1s ease-in-out infinite;
 }
 
 @keyframes rotate {
-  from {transform: rotate(0deg);}
-  to {transform: rotate(360deg);}
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 footer {
@@ -155,7 +159,7 @@ footer button:hover {
 }
 
 @media screen and (max-width: 768px) {
-  body{
+  body {
     padding: 0;
   }
   #container {
@@ -163,21 +167,30 @@ footer button:hover {
   }
   h1 {
     width: 100%;
+    margin-bottom: 5px;
+  }
+
+  header p span {
+    display: block;
+    /* margin: 0 50%; */
+  }
+
+  header p {
+    text-align: center;
   }
 
   main {
     height: 50vh;
   }
 
-  .player-title, .player-title p {
+  .player-title,
+  .player-title p {
     font-size: 40px;
   }
-#match-result {
-  width: auto;
-  font-size: 20px;
-  border-radius: 10px;
-}
-  #user-side, #pc-side {
+  
+  #match-result {
     width: auto;
+    font-size: 20px;
+    border-radius: 10px;
   }
 }
