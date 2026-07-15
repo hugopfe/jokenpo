@@ -1,8 +1,35 @@
+const Valid_Plays = Object.freeze({
+  ROCK: "Rock",
+  PAPER: "Paper",
+  SCISSORS: "Scissors",
+})
+
+const Play_Definitions = Object.freeze({
+  [Valid_Plays.ROCK]: {
+    id: Valid_Plays.ROCK,
+    wins: Valid_Plays.SCISSORS,
+    loses: Valid_Plays.PAPER,
+    icon: "&#9994;",
+  },
+  [Valid_Plays.PAPER]: {
+    id: Valid_Plays.PAPER,
+    wins: Valid_Plays.ROCK,
+    loses: Valid_Plays.SCISSORS,
+    icon: "&#9995;",
+  },
+  [Valid_Plays.SCISSORS]: {
+    id: Valid_Plays.SCISSORS,
+    wins: Valid_Plays.PAPER,
+    loses: Valid_Plays.ROCK,
+    icon: "&#9996;",
+  },
+})
+
 const game = {
   validPlays: [
-    { name: "Rock", wins: "Scissors", loses: "Paper", icon: "&#9994;" },
-    { name: "Paper", wins: "Rock", loses: "Scissors", icon: "&#9995;" },
-    { name: "Scissors", wins: "Paper", loses: "Rock", icon: "&#9996;" },
+    Play_Definitions[Valid_Plays.ROCK],
+    Play_Definitions[Valid_Plays.PAPER],
+    Play_Definitions[Valid_Plays.SCISSORS],
   ],
   playerScore: 0,
   pcScore: 0,
@@ -40,11 +67,11 @@ function play(userPlayIndex) {
 
 function checkWinner(userPlay, pcPlay) {
   let result
-  
-  if (userPlay.wins == pcPlay.name) {
+
+  if (userPlay.wins == pcPlay.id) {
     increasePlayerScore()
     result = "Player wins"
-  } else if (userPlay.loses == pcPlay.name) {
+  } else if (userPlay.loses == pcPlay.id) {
     increasePcScore()
     result = "Player loses"
   } else {
